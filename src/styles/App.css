@@ -1,7 +1,12 @@
-.App .app-header{
-  margin: 20px 30px;
+.App .app-header {
+  margin: 10px auto;
 }
 
 .App .app-logo {
   width: 54px;
+}
+
+.App .app-footer {
+  margin: 100px auto;
+  text-align: center;
 }
