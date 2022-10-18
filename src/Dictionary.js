@@ -1,15 +1,23 @@
 import React, { useState } from "react";
+import axios from "axios";
 import "./styles/Dictionary.css";
 
 export default function Dictionary() {
-  let [word, setWord] = useState(" ");
+  let [keyword, setKeyword] = useState("");
 
-  function search(event) {
-    event.reventDefault();
+  function handleResponse(response) {
+    console.log(response.data);
   }
 
-  function handleWordChange(event) {
-    setWord(event.target.value);
+  function handleKeywordChange(event) {
+    setKeyword(event.target.value);
+  }
+
+  function search(event) {
+    event.preventDefault();
+
+    let apiUrl = `https://api.dictionaryapi.dev/api/v2/entries/en/${keyword}`;
+    axios.get(apiUrl).then(handleResponse);
   }
 
   return (
@@ -23,7 +31,7 @@ export default function Dictionary() {
               placeholder="Search word..."
               autoComplete="off"
               className="form-control w-100"
-              onChange={handleWordChange}
+              onChange={handleKeywordChange}
             />
           </div>
           <div className="col-3">
@@ -33,7 +41,6 @@ export default function Dictionary() {
           </div>
         </div>
       </form>
-      <h4 className="mt-3">Searching for {word}</h4>
     </div>
   );
 }
