@@ -1,0 +1,31 @@
+.Dictionary form {
+  border: 1px solid;
+  border-radius: 50px;
+}
+
+.Dictionary .wordSearch {
+  border-radius: 50px;
+  border: none;
+  background-color: transparent;
+}
+
+.wordSearch::placeholder {
+  color: var(--font-color);
+  opacity: 0.5;
+}
+
+.Dictionary .searchBtn {
+  color: var(--font-color);
+  border: none;
+}
+
+h2 {
+  color: var(--main-color);
+  opacity: 0.7;
+}
+
+.phonetic {
+  letter-spacing: 2px;
+  color: var(--main-color);
+  opacity: 0.6;
+}

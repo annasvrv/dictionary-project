@@ -1,12 +1,61 @@
-.App .app-header {
-  margin: 10px auto;
+:root {
+  --font-color: rgb(84, 119, 125);
+  --main-color:  #a63636; 
+  --secondary-color: rgb(254, 255, 228);
 }
 
-.App .app-logo {
-  width: 54px;
+@keyframes wiggle {
+  from {
+    transform: rotate(60deg);
+  }
+  to {
+    transform: rotate(45deg);
+  }
 }
+
+.App {
+  margin: 0 auto;
+  max-width: 1200px;
+  color: var(--font-color);
+}
+
+.App .app-header {
+  margin: 20px auto 0;
+  text-align: center;
+  font-size: 16px;
+  /* color: var(--secondary-color); */
+}
+
+.App .app-img {
+  margin-left: 220px;
+}
+
+.App img {
+  width: 70px;
+  opacity: 0.6;
+  position: relative;
+  top: -3px;
+}
+
+.rotateimg180 {
+  transform: rotate(55deg);
+
+  /* animation-name: wiggle;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: ease-in-out; */
+}
+
 
 .App .app-footer {
-  margin: 100px auto;
+  margin: 300px auto 30px;
   text-align: center;
+  font-size: 16px;
+  color: var(--secondary-color);
+}
+
+.App .app-footer a {
+  /* text-decoration: none; */
+  color: var(--secondary-color);
 }
