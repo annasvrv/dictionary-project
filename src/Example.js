@@ -6,7 +6,6 @@ export default function Example(props) {
       <div className="Example">
         <div>
           <em>
-            {" "}
             <strong>Example: </strong>
             {props.example}
           </em>

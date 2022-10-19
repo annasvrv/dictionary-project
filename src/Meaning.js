@@ -4,7 +4,7 @@ import Synonyms from "./Synonyms";
 import Antonyms from "./Antonyms";
 
 export default function Meaning(props) {
-  console.log(props.defData);
+  // console.log(props.defData);
   return (
     <div className="Meaning">
       <div className="card mb-3 shadow">
