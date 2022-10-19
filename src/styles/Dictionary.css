@@ -26,6 +26,11 @@ h2 {
 
 .phonetic {
   letter-spacing: 2px;
-  color: var(--main-color);
+  /* color: var(--main-color); */
   opacity: 0.6;
+}
+
+.card {
+  background-color: var(--secondary-color);
+  border: none;
 }
