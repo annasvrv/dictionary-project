@@ -4,9 +4,13 @@ export default function Example(props) {
   if (props.example) {
     return (
       <div className="Example">
-        <p className="ex">
-          Example: <em>{props.example}</em>
-        </p>
+        <div>
+          <em>
+            {" "}
+            <strong>Example: </strong>
+            {props.example}
+          </em>
+        </div>
       </div>
     );
   } else {

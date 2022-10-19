@@ -1,7 +1,9 @@
 :root {
   --font-color: rgb(84, 119, 125);
-  --main-color:  #a63636; 
+  --main-color: #a63636;
   --secondary-color: rgb(254, 255, 228);
+  --hearder-font: "Crimson Text", serif;
+  --main-font: "Frank Ruhl Libre", serif;
 }
 
 @keyframes wiggle {
@@ -17,13 +19,19 @@
   margin: 0 auto;
   max-width: 1200px;
   color: var(--font-color);
+  font-family: var(--main-font);
 }
 
 .App .app-header {
   margin: 20px auto 0;
   text-align: center;
-  font-size: 16px;
+  
   /* color: var(--secondary-color); */
+}
+
+h1 {
+  font-family: var(--hearder-font);
+  font-weight: 900;
 }
 
 .App .app-img {
@@ -34,7 +42,7 @@
   width: 70px;
   opacity: 0.6;
   position: relative;
-  top: -3px;
+  top: -7px;
 }
 
 .rotateimg180 {
@@ -46,7 +54,6 @@
   animation-direction: alternate;
   animation-timing-function: ease-in-out; */
 }
-
 
 .App .app-footer {
   margin: 300px auto 30px;

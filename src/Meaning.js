@@ -12,11 +12,11 @@ export default function Meaning(props) {
           <h4 className="mb-3">{props.defData.partOfSpeech}</h4>
           {props.defData.definitions.map((definition, index) => {
             return (
-              <div key={index}>
-                <p className="definition">
-                  <strong>Definition: </strong>
-                  {definition.definition}
-                </p>
+              <div key={index} className="definition mb-3">
+                <div className="definon">
+                  <strong>Definition: {" "}
+                  {definition.definition}</strong>
+                </div>
                 <Example example={definition.example} />
               </div>
             );
