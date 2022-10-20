@@ -10,14 +10,14 @@ export default function Phonetics(props) {
         <div className="row mb-3">
           <div className="sound col-1">
             {/* https://www.npmjs.com/package/@publicservices/button-play-audio */}
-            <button-play-audio
+            {/* <button-play-audio
               url={props.phonetics.audio}
               // text="📢"
             >
               <span slot="icon">
                 <i className="fa-solid fa-volume-low"></i>
               </span>
-            </button-play-audio>
+            </button-play-audio> */}
           </div>
           <div className="sound-text col-10">{props.phonetics.text}</div>
 
