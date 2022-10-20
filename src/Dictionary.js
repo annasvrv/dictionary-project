@@ -41,7 +41,7 @@ export default function Dictionary(props) {
             <div className="col-11">
               <input
                 type="search"
-                placeholder="Search word..."
+                placeholder="Search for a word..."
                 autoComplete="off"
                 className="wordSearch form-control"
                 onChange={handleKeywordChange}
