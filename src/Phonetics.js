@@ -1,4 +1,5 @@
 import React from "react";
+import "./styles/Phonetics.css";
 
 export default function Phonetics(props) {
   if (props.phonetics.audio.length) {
@@ -6,9 +7,10 @@ export default function Phonetics(props) {
       <div className="Phonetics">
         <div className="row mb-3">
           <div className="sound col-1">
-            {/* https://www.npmjs.com/package/@publicservices/button-play-audio */}
+            {/*npm source audio button:
+              https://www.npmjs.com/package/@publicservices/button-play-audio */}
             <button-play-audio url={props.phonetics.audio}>
-              <span slot="icon">
+              <span slot="icon" className="icon">
                 <i className="fa-solid fa-volume-low"></i>
               </span>
             </button-play-audio>

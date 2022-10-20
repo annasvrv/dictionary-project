@@ -3,12 +3,13 @@ import axios from "axios";
 import Results from "./Results";
 import "./styles/Dictionary.css";
 
-export default function Dictionary() {
-  let [keyword, setKeyword] = useState("");
+export default function Dictionary(props) {
+  let [keyword, setKeyword] = useState(props.defaultKeyword);
   let [results, setResults] = useState(null);
+  let [loaded, setLoaded] = useState(false);
 
   function handleResponse(response) {
-    console.log(response.data[0]);
+    // console.log(response.data[0]);
     setResults(response.data[0]);
   }
 
@@ -16,37 +17,48 @@ export default function Dictionary() {
     setKeyword(event.target.value);
   }
 
-  function search(event) {
-    event.preventDefault();
+  function load() {
+    setLoaded(true);
+    search();
+  }
 
+  function search() {
     // Documentation: https://dictionaryapi.dev
     let apiUrl = `https://api.dictionaryapi.dev/api/v2/entries/en/${keyword}`;
     axios.get(apiUrl).then(handleResponse);
   }
 
-  return (
-    <div className="Dictionary">
-      
+  function handleSubmit(event) {
+    event.preventDefault();
+    search();
+  }
 
-      <form onSubmit={search} className="m-5">
-        <div className="row">
-          <div className="col-11">
-            <input
-              type="search"
-              placeholder="Search word..."
-              autoComplete="off"
-              className="wordSearch form-control"
-              onChange={handleKeywordChange}
-            />
+  if (loaded) {
+    return (
+      <div className="Dictionary">
+        <form onSubmit={handleSubmit} className="m-5">
+          <div className="row">
+            <div className="col-11">
+              <input
+                type="search"
+                placeholder="Search word..."
+                autoComplete="off"
+                className="wordSearch form-control"
+                onChange={handleKeywordChange}
+              />
+            </div>
+            <div className="col text-center">
+              <button className="searchBtn btn" type="submit">
+                <i className="fa-solid fa-magnifying-glass" title="Search"></i>
+              </button>
+            </div>
           </div>
-          <div className="col text-center">
-            <button className="searchBtn btn" type="submit">
-              <i className="fa-solid fa-magnifying-glass" title="Search"></i>
-            </button>
-          </div>
-        </div>
-      </form>
-      <Results resultData={results} />
-    </div>
-  );
+        </form>
+        <Results resultData={results} />
+      </div>
+    );
+  } else {
+    load();
+    return "Loading...";
+  }
 }

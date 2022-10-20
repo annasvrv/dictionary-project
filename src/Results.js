@@ -2,23 +2,25 @@ import React from "react";
 import Phonetics from "./Phonetics";
 import Meaning from "./Meaning";
 
+import "./styles/Results.css";
+
 export default function Results(props) {
   if (props.resultData) {
     return (
       <div className="Results">
-        <h2>{props.resultData.word}</h2>
-        {props.resultData.phonetics.map((phonetic, index) => {
-          return (
-            <div key={index}>
-              <Phonetics phonetics={phonetic} />
-            </div>
-          );
-        })}
+        <section className="card mb-3 shadow-sm">
+          <div className="card-body">
+            <h2>{props.resultData.word}</h2>
+            {props.resultData.phonetics.map((phonetic, index) => {
+              return (
+                <div key={index}>
+                  <Phonetics phonetics={phonetic} />
+                </div>
+              );
+            })}
+          </div>
+        </section>
 
-        {/* <audio controls>
-          <source src={props.resultData.phonetics[0].audio} type="audio/mpeg" />
-          Your browser does not support the audio element.
-        </audio> */}
         {props.resultData.meanings.map((meaning, index) => {
           return (
             <div key={index}>
