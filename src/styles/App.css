@@ -57,10 +57,10 @@ h1 {
   margin: 300px auto 30px;
   text-align: center;
   font-size: 16px;
-  color: var(--secondary-color);
+  color: var(--font-color);
 }
 
 .App .app-footer a {
   /* text-decoration: none; */
-  color: var(--secondary-color);
+  color: var(--font-color);
 }

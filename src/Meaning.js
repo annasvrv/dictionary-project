@@ -8,7 +8,7 @@ export default function Meaning(props) {
   return (
     <div className="Meaning">
       <div className="card mb-3 shadow-sm">
-        <div className="card-body ">
+        <div className="card-body">
           <h4 className="mb-3">{props.defData.partOfSpeech}</h4>
           {props.defData.definitions.map((definition, index) => {
             return (
