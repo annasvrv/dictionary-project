@@ -1,7 +1,4 @@
 import React from "react";
-import(
-  "https://cdn.jsdelivr.net/npm/@publicservices/button-play-audio@latest/index.js"
-);
 
 export default function Phonetics(props) {
   if (props.phonetics.audio.length) {
