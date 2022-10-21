@@ -10,11 +10,13 @@ export default function Results(props) {
       <div className="Results">
         <section className="card mb-3 shadow-sm">
           <div className="card-body">
+            {/* place pics results */}
+
             <h2>{props.resultData.word}</h2>
             {props.resultData.phonetics.map((phonetic, index) => {
               return (
                 <div key={index}>
-                  <Phonetics phonetics={phonetic} />
+                  <Phonetics phone={phonetic} />
                 </div>
               );
             })}
